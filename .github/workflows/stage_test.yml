@@ -59,3 +59,11 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
+        
+  bandit-scan:
+      needs: [test]
+      runs-on: ubuntu-latest
+      name: bandit static code check
+      steps:
+      # Checkout the code from GitHub
+        - uses: actions/checkout@v2
