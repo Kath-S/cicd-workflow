@@ -12,7 +12,7 @@ def test_index_route(app, client):
 def test_json_route(app, client):
     res = client.get('/json/')
     assert res.status_code == 200
-    expected = {'hello': 'IWS'}
+    expected = {'hello': 'world'}
     assert expected == json.loads(res.get_data(as_text=True))
 
 
